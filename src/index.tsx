@@ -96,6 +96,7 @@ const STYLE_STICKY_ITEM = {
   position: 'sticky' as ItemPosition,
 };
 
+// eslint-disable-next-line react/no-unsafe
 export default class VirtualList extends React.PureComponent<Props, State> {
   static defaultProps = {
     overscanCount: 3,
@@ -170,7 +171,7 @@ export default class VirtualList extends React.PureComponent<Props, State> {
     }
   }
 
-  componentWillReceiveProps(nextProps: Props) {
+  UNSAFE_componentWillReceiveProps(nextProps: Props) {
     const {
       estimatedItemSize,
       itemCount,
